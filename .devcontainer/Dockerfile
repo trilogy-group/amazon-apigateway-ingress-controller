@@ -77,11 +77,6 @@ RUN apt-get update \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/* /tmp/gotools
 
-# Install codeserver to enable browser based remote dev
-RUN mkdir $HOME/code-server && cd $HOME/code-server && wget https://github.com/cdr/code-server/releases/download/3.1.1/code-server-3.1.1-linux-x86_64.tar.gz \
-    && cd - && tar -zxf $HOME/code-server/code-server-3.1.1-linux-x86_64.tar.gz -C $HOME/code-server && rm $HOME/code-server/code-server-3.1.1-linux-x86_64.tar.gz \
-    && mv $HOME/code-server/code-server-3.1.1-linux-x86_64/* $HOME/code-server/
-
 # Update this to "on" or "off" as appropriate
 ENV GO111MODULE=auto
 
