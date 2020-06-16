@@ -25,5 +25,10 @@
 	"postCreateCommand": "go version",
 
 	// Comment out the next line to run as root
-	"remoteUser": "vscode"
+	"remoteUser": "vscode",
+	
+	"mounts": [
+		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.aws,target=/home/vscode/.aws,type=bind,consistency=cached,readonly",
+		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.kube,target=/home/vscode/.kube,type=bind,consistency=cached,readonly"
+	]
 }
